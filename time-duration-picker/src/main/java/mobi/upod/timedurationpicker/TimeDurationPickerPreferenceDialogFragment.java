@@ -4,14 +4,11 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.view.WindowManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceDialogFragmentCompat;
 
 /**
@@ -41,7 +38,7 @@ public class TimeDurationPickerPreferenceDialogFragment extends PreferenceDialog
         picker.setTimeUnits(preference.timeUnits);
         picker.setDuration(preference.getDuration());
 
-        final AlertDialog dialog = new MaterialAlertDialogBuilder(context)
+        return new MaterialAlertDialogBuilder(context)
             .setView(picker)
             .setTitle(preference.getDialogTitle())
             .setCancelable(true)
@@ -54,8 +51,6 @@ public class TimeDurationPickerPreferenceDialogFragment extends PreferenceDialog
                 this
             )
             .create();
-
-        return dialog;
     }
 
     @Override

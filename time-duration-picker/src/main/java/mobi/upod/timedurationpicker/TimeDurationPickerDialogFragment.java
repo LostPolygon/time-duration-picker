@@ -2,22 +2,13 @@ package mobi.upod.timedurationpicker;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 
-import com.google.android.material.dialog.InsetDialogOnTouchListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.dialog.MaterialDialogs;
-import com.google.android.material.shape.MaterialShapeDrawable;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.core.view.ViewCompat;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentActivity;
 
 /**
  * Base class for implementing a time duration picker dialog fragment as described in the
@@ -36,10 +27,9 @@ public abstract class TimeDurationPickerDialogFragment
     @Override
     @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        final FragmentActivity context = getActivity();
+        final Context context = requireContext();
 
-        final LayoutInflater inflater = LayoutInflater.from(context);
-        final View view = inflater.inflate(R.layout.time_duration_picker_dialog, null);
+        final View view = getLayoutInflater().inflate(R.layout.time_duration_picker_dialog, null);
         TimeDurationPicker durationInputView = (TimeDurationPicker) view;
 
         final MaterialAlertDialogBuilder builder =
