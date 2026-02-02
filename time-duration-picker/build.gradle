@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.4'
+        classpath 'com.android.tools.build:gradle:8.13.0'
     }
 }
 apply plugin: 'com.android.library'
@@ -38,11 +38,11 @@ repositories {
 
 android {
     namespace 'mobi.upod.timedurationpicker'
-    compileSdk 34
+    compileSdk 36
 
     defaultConfig {
         minSdk 21
-        targetSdk 34
+        targetSdk 36
     }
     buildTypes {
         release {
